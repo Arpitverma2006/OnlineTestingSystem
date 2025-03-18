@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{%block title%} OTS-Registration Form {%endblock%}
+{%block top%}
+<a href="{% url 'OTS:login' %}" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #4CAF50; color: #fff; text-decoration: none; font-size: 16px; font-weight: bold; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" onmouseover="this.style.background=' #3e8e41'" onmouseout="this.style.background='#4CAF50'"">Login</a>
+{%endblock%}
+{%block content%}
+<div class="all-forms">
+    <h1>Get Registered Here !!</h1>
+    <form action="{% url 'OTS:storeregistration' %}" method="POST">
+        {% csrf_token %}
+        <h3 style="text-align: center;">Registration Form</h3>
+        <label for="username">Username</label>
+        <input type="text" name="username">
+        <label for="password">Password</label>
+        <input type="password" name="password">
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        
+
+        <div style="text-align: center;">
+            <input type="submit" value="Submit" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #4CAF50; color: #fff;" onmouseover="this.style.background=' #3e8e41'" onmouseout="this.style.background='#4CAF50'">
+            <input type="reset" value="Clear" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #e7e7e7; color: #333;" onmouseover="this.style.background=' #d7d7d7'" onmouseout="this.style.background='#e7e7e7'">
+        </div>
+    </form>
+    Already have an account, <a href="{% url 'OTS:login'%}">Click Here</a>
+</div>
+{%endblock%}

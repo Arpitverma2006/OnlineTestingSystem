@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block title %}OTS - Registration Status{% endblock title %}
+
+{% block top %}
+<a href="{% url 'OTS:registrationForm' %}" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #4CAF50; color: #fff; text-decoration: none;">Signup</a>
+<a href="{% url 'OTS:login' %}" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #e7e7e7; color: #333; text-decoration: none;">Login</a>
+{% endblock %}
+
+{% block content %}
+    <div class="userStatus">
+        {% if userStatus == 1 %}
+            <div style="background-color: #f44336; color: #fff; padding: 10px; border-radius: 5px;">
+                Sorry, the username already exists. Please try a different username.
+                <a href="{% url 'OTS:registrationForm' %}" style="color: #fff; text-decoration: none;">Back to Candidate Registration Form</a>
+            </div>
+        {% elif userStatus == 2 %}
+            <div style="background-color: #4CAF50; color: #fff; padding: 10px; border-radius: 5px;">
+                Congratulations! Your registration was successful.
+                <a href="{% url 'OTS:login' %}" style="color: #fff; text-decoration: none;">Login</a>
+            </div>
+        {% elif userStatus == 3 %}
+            <div style="background-color: #f44336; color: #fff; padding: 10px; border-radius: 5px;">
+                Oops! Improper request.
+                <a href="{% url 'OTS:registrationForm' %}" style="color: #fff; text-decoration: none;">Back to Candidate Registration Form</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

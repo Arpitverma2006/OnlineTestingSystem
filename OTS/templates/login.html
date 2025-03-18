@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{%block title%} OTS- Login Form {%endblock%}
+{%block top%}
+<a href="{% url 'OTS:registrationForm' %}" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #4CAF50; color: #fff; text-decoration: none; font-size: 16px; font-weight: bold; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" onmouseover="this.style.background=' #3e8e41'" onmouseout="this.style.background='#4CAF50'">Signup</a>
+
+{%endblock%}
+
+{%block content%}
+<div class="all-forms">
+    <h1>Start Your Journey Again !!!</h1>
+    {% if loginError %}
+        <div id="error">{{loginError}}</div>
+    {% endif %}
+    <form action="{% url 'OTS:login' %}" method="POST">
+        {% csrf_token %}
+        <h3 style="text-align: center;">Login Form</h3>
+        <div class="form-unit">
+            <label for="username">Username</label>
+            <input type="text" name="username">
+        </div>
+        <div class="form-unit">
+            <label for="password">Password</label>
+            <input type="password" name="password">
+        </div>
+        <div class="form-unit" style="text-align: center;  ">
+            <input type="submit" value="Login" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #4CAF50; color: #fff; margin: 10px;" onmouseover="this.style.background=' #3e8e41'" onmouseout="this.style.background='#4CAF50'">
+            <input type="reset" value="Clear" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #e7e7e7; color: #333; margin: 10px;" onmouseover="this.style.background=' #d7d7d7'" onmouseout="this.style.background='#e7e7e7'">
+        </div>
+    </form>
+    New user <a href="{% url 'OTS:registrationForm' %}">Click Here</a>
+</div>
+{%endblock%}

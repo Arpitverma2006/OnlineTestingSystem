@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+{% load  static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title %}{%endblock%}</title>
+    <!-- <link rel="stylesheet" href="{% static 'theme.css' %}">
+    <link rel="stylesheet" href="{% static 'formstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'buttonstyle.css' %}"> -->
+    <!-- Google Fonts for Elegant Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        
+
+                    /* Dark Theme Colors */
+                    /* Import Google Font for Modern Look */
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+            /* Global Styles */
+            * {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Top Header */
+            .top {
+                height: 60px;
+                background: linear-gradient(90deg, #08192D, #173B60);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+                border-bottom: 2px solid #4cc9f0;
+            }
+
+            /* Website Name */
+            .top .sitename {
+                color: #4cc9f0;
+                font-size: 1.8em;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            /* Navigation Menu */
+            .top .menu a {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1em;
+                margin-left: 15px;
+                transition: color 0.3s, transform 0.2s;
+            }
+
+            .top .menu a:hover {
+                color: #4cc9f0;
+                transform: scale(1.1);
+            }
+
+            /* Content Section */
+            .content {
+                width: 80%;
+                margin: 30px auto;
+                padding: 20px;
+                background: #1e1e1e;
+                color: #e0e0e0;
+                border-radius: 10px;
+                box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+            }
+
+            /* Tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            /* Table Headers */
+            table tr:first-child {
+                background: linear-gradient(90deg, #f64c72, #e53950);
+                color: white;
+                font-weight: bold;
+                height: 40px;
+                text-transform: uppercase;
+            }
+
+            /* Table Rows - Dark Mode Styling */
+            table tr:nth-child(odd) {
+                background-color: #22313F;
+                color: white;
+                height: 35px;
+                transition: background 0.3s ease;
+            }
+
+            table tr:nth-child(even) {
+                background-color: #2C3E50;
+                height: 35px;
+                transition: background 0.3s ease;
+            }
+
+            /* Hover Effect for Rows */
+            table tr:hover {
+                background: #4cc9f0;
+                color: #121212;
+                font-weight: bold;
+            }
+
+            /* Table Data */
+            table td {
+                text-align: center;
+                padding: 10px;
+            }
+
+            /* Special Text Styling */
+            span.special {
+                color: #4cc9f0;
+                font-weight: bold;
+                font-size: 1.1em;
+            }
+
+            /* Buttons */
+            .btn {
+                display: inline-block;
+                padding: 12px 18px;
+                background: #007bff;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: 600;
+                transition: background 0.3s, transform 0.2s;
+            }
+
+            .btn:hover {
+                background: #0056b3;
+                transform: scale(1.05);
+            }
+
+            /* Responsive Design */
+            @media screen and (max-width: 768px) {
+                .top {
+                    flex-direction: column;
+                    height: auto;
+                    text-align: center;
+                    padding: 10px;
+                }
+                .top .menu {
+                    margin-top: 10px;
+                }
+                .content {
+                    width: 95%;
+                }
+                table td {
+                    font-size: 0.9em;
+                }
+            }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #121212;
+            color: #e0e0e0;
+        }
+
+        /* New Navigation Bar - Deep Blue Gradient */
+        nav {
+            background: linear-gradient(90deg, #08192D, #173B60);
+            padding: 15px;
+            text-align: right;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #4cc9f0;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.2s;
+        }
+        nav a:hover {
+            color: #4cc9f0;
+            transform: scale(1.05);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 25px;
+            background: #1e1e1e;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 18px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+
+
+        /* Import Google Font for Premium Look */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Global Styles */
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+                    /* Form Container */
+            form {
+                width: 90%;
+                max-width: 600px;
+                margin: 30px auto;
+                padding: 25px;
+                background: rgba(30, 30, 30, 0.9);
+                border-radius: 12px;
+                backdrop-filter: blur(10px);
+                box-shadow: 0px 0px 15px rgba(76, 201, 240, 0.4);
+                transition: transform 0.3s ease;
+            }
+
+            /* Form Hover Effect */
+            form:hover {
+                transform: scale(1.02);
+            }
+
+            /* Input Fields */
+            input[type="text"], input[type="email"], input[type="password"] {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 20px;
+                font-size: 18px;
+                background: #1e1e1e;
+                color: white;
+                border: 2px solid #4cc9f0;
+                border-radius: 8px;
+                outline: none;
+                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            /* Focus Effect for Inputs */
+            input:focus {
+                border-color: #ffffff;
+                box-shadow: 0px 0px 8px rgba(76, 201, 240, 0.7);
+            }
+
+            /* Labels & Question Text */
+            .question {
+                font-size: 22px;
+                color: #4cc9f0;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            /* Option Styling */
+            .options {
+                font-size: 18px;
+                color: #ffffff;
+                margin-bottom: 15px;
+            }
+
+            /* Custom Radio Button */
+            /* .options input {
+                display: none; /* Hide the actual radio button */
+            
+
+            /* Label for Radio Buttons */
+            .options label {
+                display: inline-block;
+                padding: 10px 15px;
+                margin: 5px;
+                background: rgba(76, 201, 240, 0.1);
+                color: white;
+                border: 2px solid transparent;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            /* Radio Button Hover & Active State */
+            .options label:hover,
+            .options input:checked + label {
+                background: rgba(76, 201, 240, 0.3);
+                border: 2px solid #4cc9f0;
+            }
+        /* Submit Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #007bff, #4cc9f0);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Button Hover Effect */
+        button:hover {
+            background: linear-gradient(90deg, #0056b3, #33bdeb);
+            transform: scale(1.05);
+        }
+
+
+                /* Button Container */
+        .button-link {
+            width: 220px;
+            height: 50px;
+            background: linear-gradient(90deg, #007bff, #4cc9f0);
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(76, 201, 240, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effect */
+        .button-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 15px rgba(76, 201, 240, 0.6);
+        }
+
+        /* Click Effect */
+        .button-link:active {
+            transform: translateY(2px);
+            box-shadow: 0px 2px 5px rgba(76, 201, 240, 0.3);
+        }
+
+        /* Button Text Styling */
+        .button-link a {
+            text-decoration: none;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            transition: color 0.3s ease;
+        }
+
+        /* Button Hover Animation */
+        .button-link a:hover {
+            color: #121212;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="sitename"><h1>Online Tesing System</h1></div>
+        <div class="menu">
+            {% block top %}{% endblock %}
+        </div>
+    </div>
+    <div class="content">
+        {%block content%}{%endblock%}
+    </div>
+</body>
+</html>

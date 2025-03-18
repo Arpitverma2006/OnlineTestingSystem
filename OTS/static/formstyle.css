@@ -1,0 +1,108 @@
+/* Import Google Font for Premium Look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Form Container */
+form {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 15px rgba(76, 201, 240, 0.4);
+    transition: transform 0.3s ease;
+}
+
+/* Form Hover Effect */
+form:hover {
+    transform: scale(1.02);
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    background: #1e1e1e;
+    color: white;
+    border: 2px solid #4cc9f0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus Effect for Inputs */
+input:focus {
+    border-color: #ffffff;
+    box-shadow: 0px 0px 8px rgba(76, 201, 240, 0.7);
+}
+
+/* Labels & Question Text */
+.question {
+    font-size: 22px;
+    color: #4cc9f0;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Option Styling */
+.options {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Custom Radio Button */
+.options input {
+    display: none;
+}
+
+/* Label for Radio Buttons */
+.options label {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    background: rgba(76, 201, 240, 0.1);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Radio Button Hover & Active State */
+.options label:hover,
+.options input:checked + label {
+    background: rgba(76, 201, 240, 0.3);
+    border: 2px solid #4cc9f0;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #007bff, #4cc9f0);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: linear-gradient(90deg, #0056b3, #33bdeb);
+    transform: scale(1.05);
+}
